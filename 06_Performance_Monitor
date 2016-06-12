@@ -1,0 +1,15 @@
+def measure(n=0,&block)
+start=Time.now
+yield
+sleep(n)
+(n-1).times do
+	block.call
+end
+
+finish=Time.now
+if n>1
+	return (finish-start)/n
+else
+return finish-start
+end
+end
