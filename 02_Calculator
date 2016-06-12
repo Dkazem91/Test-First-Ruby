@@ -1,0 +1,33 @@
+def add(x,y)
+	return x+=y
+end
+
+def subtract(x,y)
+	return x-=y
+end
+
+def sum(array)
+	solution=0
+	array.each{|x| solution+=x}
+	return solution
+end
+
+def multiply(x,y)
+	return x*=y
+end
+
+def power(x,y)
+	return x**y
+end
+def factorial(x)
+solution=1
+if x==0
+    return 0
+else
+while x>0
+solution*=x
+x-=1
+end
+return solution
+end
+end
