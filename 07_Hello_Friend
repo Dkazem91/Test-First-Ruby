@@ -1,0 +1,9 @@
+class Friend
+	def greeting(word=nil)
+		if word==nil
+			return "Hello!"
+		else
+			return "Hello, "+word+"!"
+		end
+	end
+end
