@@ -1,0 +1,18 @@
+class Book
+	
+	def title= (title)
+		@title=title.capitalize
+	end
+	def title
+		little_words=['a','an','the','at','by','for','in','of','on','to','up',
+		'and','as','but','it','or','nor','over']
+		@title.split(' ').map{|x| 
+
+			if little_words.include?(x)
+				x
+			else
+				x.capitalize
+			end
+		}.join(' ')
+end
+end
