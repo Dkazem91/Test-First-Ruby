@@ -1,0 +1,11 @@
+def reverser 
+    return yield.split(' ').each{|x| x.reverse!}.join(' ')
+end
+
+def adder(number=1)
+	yield+number
+end
+
+def repeater(n=1)
+	n.times{yield}
+end
