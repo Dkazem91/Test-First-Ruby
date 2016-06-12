@@ -1,0 +1,41 @@
+def echo(string)
+	return string
+end
+
+def shout(string)
+	return string.upcase
+end
+
+def repeat(string,interval=2)
+    solution=[]
+	interval.times{solution.push(string)}
+return solution.join(' ')
+end
+
+def start_of_word(string,position=0)
+	return string[0..position-1]
+
+end
+
+def first_word(string)
+	return string.split(' ')[0]
+end
+
+def titleize(string)
+little_words=['a','an','the','at','by','for','in','of','on','to','up',
+		'and','as','but','it','or','nor','over']
+	
+solution=""
+solution+=string[0].upcase+string[1..string.length]
+solution.split(' ').map{|x|
+	
+	if little_words.include?(x)
+    x
+else
+    x.capitalize
+end
+}.join(' ')
+
+
+end
+
