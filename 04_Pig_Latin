@@ -1,0 +1,21 @@
+def translate(word)
+	solution=[]
+	vowels=["a","e","i","o","u"]
+	
+	word.split(' ').each{|x| 
+	if vowels.include?(x[0])
+		 solution.push(x+"ay")
+	 elsif x[0..1]=="qu"
+		solution.push(x[2..x.length]+x[0..1]+"ay")
+	elsif x[1..2]=="qu"
+		solution.push(x[3..x.length]+x[0..2]+"ay")
+	elsif vowels.include?(x[1])
+		 solution.push(x[1..x.length]+x[0]+"ay")
+	elsif vowels.include?(x[2]) 
+		solution.push(x[2..x.length]+x[0..1]+"ay")
+	else 
+		solution.push(x[3..x.length]+x[0..2]+"ay")
+	end
+}
+return solution.join(' ')
+end
