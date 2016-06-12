@@ -1,0 +1,11 @@
+require 'bigdecimal'
+def ftoc(number)
+	
+	return BigDecimal((number-32).to_s)/BigDecimal("1.8")
+	
+	
+end
+
+def ctof(number)
+	return BigDecimal((number*1.8).to_s)+BigDecimal("32")
+end
