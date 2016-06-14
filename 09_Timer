@@ -1,0 +1,13 @@
+class Timer
+	@@n=0
+	def seconds=(x)
+		@@n=x
+	end
+	def seconds
+		@@n
+	end
+	def time_string
+	Time.at(@@n).utc.strftime("%H:%M:%S")
+
+	end
+end
