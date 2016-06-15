@@ -1,0 +1,39 @@
+class Dictionary
+	def initialize
+	@dictionary={}
+end
+	def entries
+		@dictionary
+
+	end
+
+	def add(entry)
+		if entry.is_a?(String)
+			entry.split(' ').each{|word, detail| @dictionary[word]=detail}
+		else
+		entry.each{|word,detail| @dictionary[word]=detail}
+		end
+	end
+
+	def keywords
+		@dictionary.keys.sort
+	end
+
+	def include?(word)
+		@dictionary.key?(word)
+	end
+	def find (word)
+		newhash={}
+		@dictionary.each{|key,detail|
+		if key =~/^#{word}/
+			newhash[key]=detail
+		end
+		}
+		return newhash
+		end
+	def printable
+		@dictionary.map{|key| 
+		%Q([#{key.first}] "#{key.last}")
+		}.sort.join("\n")
+	end
+end
